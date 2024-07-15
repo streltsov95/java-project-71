@@ -10,7 +10,7 @@ public class StylishFormatter {
         sb.append("{\n");
         for (Map<String, Object> map : compareResult) {
             if (map.get("STATUS").equals("SAME")) {
-                sb.append("  ");
+                sb.append("    ");
                 sb.append(map.get("FIELD"));
                 sb.append(": ");
                 sb.append(map.get("VALUE"));
