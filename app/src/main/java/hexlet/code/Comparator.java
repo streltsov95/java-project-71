@@ -21,7 +21,7 @@ public class Comparator {
                 temp.put("FIELD", key);
                 temp.put("STATUS", "REMOVED");
                 temp.put("OLD_VALUE", file1.get(key));
-            } else if (!file1.get(key).equals(file2.get(key))) {
+            } else if (!Objects.equals(file1.get(key), file2.get(key))) {
                 temp.put("FIELD", key);
                 temp.put("STATUS", "UPDATED");
                 temp.put("OLD_VALUE", file1.get(key));
