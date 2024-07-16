@@ -10,3 +10,6 @@
 
 ### Functionality presentation with YML input
 [![asciicast](https://asciinema.org/a/R3JZH9CjSzKHaLiblrE533DDo.svg)](https://asciinema.org/a/R3JZH9CjSzKHaLiblrE533DDo)
+
+### Differ presentation with inserted structures
+[![asciicast](https://asciinema.org/a/l1q30q6QHp0UxNCG9F5P0QDgj.svg)](https://asciinema.org/a/l1q30q6QHp0UxNCG9F5P0QDgj)
