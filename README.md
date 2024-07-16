@@ -7,3 +7,6 @@
 
 ### 1st functionality presentation:
 [![asciicast](https://asciinema.org/a/hxs9ufJljtD3CWoTfhY9q0Tmv.svg)](https://asciinema.org/a/hxs9ufJljtD3CWoTfhY9q0Tmv)
+
+### Functionality presentation with YML input
+[![asciicast](https://asciinema.org/a/R3JZH9CjSzKHaLiblrE533DDo.svg)](https://asciinema.org/a/R3JZH9CjSzKHaLiblrE533DDo)
