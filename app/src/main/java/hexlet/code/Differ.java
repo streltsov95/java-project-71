@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.formatters.Formatter;
 import hexlet.code.formatters.PlainFormatter;
 import hexlet.code.formatters.StylishFormatter;
 
@@ -21,21 +22,12 @@ public class Differ {
 
         List<Map<String, Object>> compareResult = Comparator.compare(file1, file2);
 
-        return format(compareResult, outFormat);
+        return Formatter.format(compareResult, outFormat);
 
     }
 
     public static String generate(String filePath1, String filePath2) throws Exception {
         return generate(filePath1, filePath2, "stylish");
-    }
-
-    private static String format(List<Map<String, Object>> compareResult, String outFormat) {
-        return switch (outFormat) {
-            case "stylish" -> StylishFormatter.format(compareResult);
-            case "plain" -> PlainFormatter.format(compareResult);
-//            case "json" -> JSONFormatter.format(compareResult);
-            default -> throw new RuntimeException("format is not supported");
-        };
     }
 
 }
