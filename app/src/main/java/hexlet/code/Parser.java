@@ -15,10 +15,10 @@ public class Parser {
 
         if (format.equals("json")) {
             ObjectMapper objectMapper = new ObjectMapper();
-            map = objectMapper.readValue(content, new TypeReference<Map<String, Object>>() {});
+            map = objectMapper.readValue(content, new TypeReference<Map<String, Object>>() { });
         } else if (format.equals("yaml") || format.equals("yml")) {
             ObjectMapper objectMapper = new YAMLMapper();
-            map = objectMapper.readValue(content, new TypeReference<Map<String, Object>>() {});
+            map = objectMapper.readValue(content, new TypeReference<Map<String, Object>>() { });
         }
 
         return map;

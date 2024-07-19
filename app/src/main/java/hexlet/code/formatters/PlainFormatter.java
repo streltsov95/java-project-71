@@ -7,16 +7,15 @@ import java.util.Map;
 public class PlainFormatter {
 
     private static String getValue(Object data) {
-        if(data == null) {
+        if (data == null) {
             return "null";
-        }
-        else if (data instanceof Collection || data instanceof Map) {
+        } else if (data instanceof Collection || data instanceof Map) {
             return "[complex value]";
-        }
-        else if (data instanceof String) {
+        } else if (data instanceof String) {
             return "'" + data + "'";
+        } else {
+            return String.valueOf(data);
         }
-        else return String.valueOf(data);
     }
 
     public static String format(List<Map<String, Object>> compareResult) {

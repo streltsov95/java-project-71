@@ -15,19 +15,22 @@ public class StylishFormatter {
                 sb.append(": ");
                 sb.append(map.get("VALUE"));
                 sb.append("\n");
-            } if (map.get("STATUS").equals("REMOVED")) {
+            }
+            if (map.get("STATUS").equals("REMOVED")) {
                 sb.append("  - ");
                 sb.append(map.get("FIELD"));
                 sb.append(": ");
                 sb.append(map.get("OLD_VALUE"));
                 sb.append("\n");
-            } if (map.get("STATUS").equals("ADDED")) {
+            }
+            if (map.get("STATUS").equals("ADDED")) {
                 sb.append("  + ");
                 sb.append(map.get("FIELD"));
                 sb.append(": ");
                 sb.append(map.get("NEW_VALUE"));
                 sb.append("\n");
-            } if (map.get("STATUS").equals("UPDATED")) {
+            }
+            if (map.get("STATUS").equals("UPDATED")) {
                 sb.append("  - ");
                 sb.append(map.get("FIELD"));
                 sb.append(": ");
