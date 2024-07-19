@@ -13,3 +13,6 @@
 
 ### Differ presentation with inserted structures
 [![asciicast](https://asciinema.org/a/l1q30q6QHp0UxNCG9F5P0QDgj.svg)](https://asciinema.org/a/l1q30q6QHp0UxNCG9F5P0QDgj)
+
+### Differ presentation with default(stylish) and plain output
+[![asciicast](https://asciinema.org/a/nHe7EoYj8YevNnpAU9KAnInIT.svg)](https://asciinema.org/a/nHe7EoYj8YevNnpAU9KAnInIT)
