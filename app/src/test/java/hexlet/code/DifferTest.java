@@ -13,7 +13,7 @@ class DifferTest {
 
     private static String expectedStylish;
 //    private static String expectedJson;
-//    private static String expectedPlain;
+    private static String expectedPlain;
 
     private static Path getAbsolutePath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
@@ -28,7 +28,7 @@ class DifferTest {
     @BeforeAll
     public static void beforeAll() throws Exception {
 //        String expectedJson = readFile("expected_results/json.json");
-//        String expectedPlain = readFile("expected_results/plain.txt");
+        expectedPlain = readFile("expected_results/plain.txt");
         expectedStylish = readFile("expected_results/stylish.txt");
     }
 
@@ -41,6 +41,7 @@ class DifferTest {
         String actualResult = Differ.generate(filePath1, filePath2);
         assertEquals(expectedStylish, actualResult);
     }
+
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void testGenerateWithStylishOutput(String inputFormat) throws Exception {
@@ -49,5 +50,15 @@ class DifferTest {
 
         String actualResult = Differ.generate(filePath1, filePath2, "stylish");
         assertEquals(expectedStylish, actualResult);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"json", "yml"})
+    public void testGenerateWithPlainOutput(String inputFormat) throws Exception {
+        String filePath1 = getAbsolutePath("input_files/file1." + inputFormat).toString();
+        String filePath2 = getAbsolutePath("input_files/file2." + inputFormat).toString();
+
+        String actualResult = Differ.generate(filePath1, filePath2, "plain");
+        assertEquals(expectedPlain, actualResult);
     }
 }
