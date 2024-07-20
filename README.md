@@ -16,3 +16,6 @@
 
 ### Differ presentation with default(stylish) and plain output
 [![asciicast](https://asciinema.org/a/nHe7EoYj8YevNnpAU9KAnInIT.svg)](https://asciinema.org/a/nHe7EoYj8YevNnpAU9KAnInIT)
+
+### Differ presentation with json output
+[![asciicast](https://asciinema.org/a/q3BvWrz9FUpdrgfAb2xe29gzI.svg)](https://asciinema.org/a/q3BvWrz9FUpdrgfAb2xe29gzI)
