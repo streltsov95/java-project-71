@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class Comparator {
         keys.addAll(file2.keySet());
 
         for (String key : keys) {
-            Map<String, Object> temp = new HashMap<>();
+            Map<String, Object> temp = new LinkedHashMap<>();
             if (!file1.containsKey(key)) {
                 temp.put("FIELD", key);
                 temp.put("STATUS", "ADDED");
