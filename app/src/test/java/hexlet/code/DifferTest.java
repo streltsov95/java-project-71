@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 class DifferTest {
 
     private static String expectedStylish;
-//    private static String expectedJson;
+    private static String expectedJson;
     private static String expectedPlain;
 
     private static Path getAbsolutePath(String fileName) {
@@ -27,7 +27,7 @@ class DifferTest {
 
     @BeforeAll
     public static void beforeAll() throws Exception {
-//        String expectedJson = readFile("expected_results/json.json");
+        expectedJson = readFile("expected_results/json.json");
         expectedPlain = readFile("expected_results/plain.txt");
         expectedStylish = readFile("expected_results/stylish.txt");
     }
@@ -60,5 +60,15 @@ class DifferTest {
 
         String actualResult = Differ.generate(filePath1, filePath2, "plain");
         assertEquals(expectedPlain, actualResult);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"json", "yml"})
+    public void testGenerateWithJsonOutput(String inputFormat) throws Exception {
+        String filePath1 = getAbsolutePath("input_files/file1." + inputFormat).toString();
+        String filePath2 = getAbsolutePath("input_files/file2." + inputFormat).toString();
+
+        String actualResult = Differ.generate(filePath1, filePath2, "json");
+        assertEquals(expectedJson, actualResult);
     }
 }
