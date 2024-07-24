@@ -15,6 +15,9 @@ class DifferTest {
     private static String expectedJson;
     private static String expectedPlain;
 
+    private static final String FILE1 = "input_files/file1.";
+    private static final String FILE2 = "input_files/file2.";
+
     private static Path getAbsolutePath(String fileName) {
         return Paths.get("src", "test", "resources", fileName)
                 .toAbsolutePath().normalize();
@@ -35,8 +38,8 @@ class DifferTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void testGenerateWithDefaultOutput(String inputFormat) throws Exception {
-        String filePath1 = getAbsolutePath("input_files/file1." + inputFormat).toString();
-        String filePath2 = getAbsolutePath("input_files/file2." + inputFormat).toString();
+        String filePath1 = getAbsolutePath(FILE1 + inputFormat).toString();
+        String filePath2 = getAbsolutePath(FILE2 + inputFormat).toString();
 
         String actualResult = Differ.generate(filePath1, filePath2);
         assertEquals(expectedStylish, actualResult);
@@ -45,8 +48,8 @@ class DifferTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void testGenerateWithStylishOutput(String inputFormat) throws Exception {
-        String filePath1 = getAbsolutePath("input_files/file1." + inputFormat).toString();
-        String filePath2 = getAbsolutePath("input_files/file2." + inputFormat).toString();
+        String filePath1 = getAbsolutePath(FILE1 + inputFormat).toString();
+        String filePath2 = getAbsolutePath(FILE2 + inputFormat).toString();
 
         String actualResult = Differ.generate(filePath1, filePath2, "stylish");
         assertEquals(expectedStylish, actualResult);
@@ -55,8 +58,8 @@ class DifferTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void testGenerateWithPlainOutput(String inputFormat) throws Exception {
-        String filePath1 = getAbsolutePath("input_files/file1." + inputFormat).toString();
-        String filePath2 = getAbsolutePath("input_files/file2." + inputFormat).toString();
+        String filePath1 = getAbsolutePath(FILE1 + inputFormat).toString();
+        String filePath2 = getAbsolutePath(FILE2 + inputFormat).toString();
 
         String actualResult = Differ.generate(filePath1, filePath2, "plain");
         assertEquals(expectedPlain, actualResult);
@@ -65,8 +68,8 @@ class DifferTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void testGenerateWithJsonOutput(String inputFormat) throws Exception {
-        String filePath1 = getAbsolutePath("input_files/file1." + inputFormat).toString();
-        String filePath2 = getAbsolutePath("input_files/file2." + inputFormat).toString();
+        String filePath1 = getAbsolutePath(FILE1 + inputFormat).toString();
+        String filePath2 = getAbsolutePath(FILE2 + inputFormat).toString();
 
         String actualResult = Differ.generate(filePath1, filePath2, "json");
         assertEquals(expectedJson, actualResult);
